@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</html>
+
+<script>
+$(document).ready(function(){
+$("form").submit(function(){
+    var name = $("#todo").val();
+    $('ul').prepend("<li>" + name);
+    return false;
+});
+$("ul").on("click", "li", function(event) { delTask = event.target; $(delTask).remove(); });
+});
+</script>
+
+<body>
+<h1>To-Do List</h1>
+<h3>*Click on a completed task to remove it from the list</h3>
+<form action="" method="post">
+<input type="text" id="todo" name="todo" value="What to do">
+<input type="submit" value="Submit">
+</form>
+<h2>I need to:</h2>
+<ul id="list_div">
+</ul>
+
+</body>
+
+<style>
+body{
+    background-color: #ffffcc;
+}
+
+h1{
+    text-align: center;
+}
+
+h2, h3{
+    text-align: center;
+}
+
+form{
+     margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+}
+ul{
+     margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+}
+
+li{
+    text-align: center;
+list-style: none;
+}
+</style>
